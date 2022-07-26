@@ -7,5 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class siswa extends Model
 {
-    use HasFactory;
+    public function kelas(){
+        return $this->hasOne(Kelas::class,'id','kelas_id');
+    }
 }

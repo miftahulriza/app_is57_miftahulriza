@@ -21,8 +21,6 @@ return new class extends Migration
             $table->date('tanggal_lahir');
             $table->enum('jenis_kelamin',['L','P']);
             $table->bigInteger('kelas_id');
-         
-            $table->string('email');
             $table->timestamps();
         });
     }

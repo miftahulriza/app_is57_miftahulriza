@@ -38,6 +38,7 @@ class kelasController extends Controller
     public function store(Request $request)
     {
         $kelas = new Kelas;
+
         $kelas->kode_kelas = $request->kd;
         $kelas->kelas = $request->kelas;
 

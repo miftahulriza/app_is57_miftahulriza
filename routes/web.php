@@ -1,8 +1,12 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\kelasController;
+use App\Http\Controllers\siswaController;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -30,3 +34,11 @@ Route::post('/kelas/store', [kelasController::class, 'store']);
 Route::get('/kelas/edit/{id}', [kelasController::class, 'edit']);
 Route::put('/kelas/{id}', [kelasController::class, 'update']);
 Route::delete('/kelas/{id}', [kelasController::class, 'destroy']);
+
+
+Route::get('/siswa', [siswaController::class, 'index']);
+Route::get('/siswa/form', [siswaController::class, 'create']);
+Route::post('/siswa/store', [siswaController::class, 'store']);
+Route::get('/siswa/edit/{id}', [siswaController::class, 'edit']);
+Route::put('/siswa/{id}', [siswaController::class, 'update']);
+Route::delete('/siswa/{id}', [siswaController::class, 'destroy']);

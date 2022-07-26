@@ -3,17 +3,21 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Kelas;
+use App\Models\siswa;
 
 class siswaController extends Controller
 {
-    /**
+   /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        //
+        $nomor = 1;
+        $sis = siswa::all();
+        return view('page.siswa.index',compact('sis','nomor'));
     }
 
     /**
@@ -23,7 +27,8 @@ class siswaController extends Controller
      */
     public function create()
     {
-        //
+        $kelas = Kelas::all();
+        return view('page.siswa.form',compact('kelas'));
     }
 
     /**
@@ -34,7 +39,19 @@ class siswaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       
+        $sis = new siswa;
+
+        $sis->nis = $request->nis;
+        $sis->nama = $request->nama;
+        $sis->tempat_lahir = $request->tempat;
+        $sis->tanggal_lahir = $request->tgl;
+        $sis->jenis_kelamin = $request->jk;
+        $sis->kelas_id = $request->kelas;
+
+        $sis->save();
+
+        return redirect('/siswa');
     }
 
     /**
@@ -56,7 +73,11 @@ class siswaController extends Controller
      */
     public function edit($id)
     {
-        //
+        $kelas = Kelas::all();
+
+        $sis = siswa::find($id);
+
+        return view('page.siswa.edit',compact('kelas','sis'));   
     }
 
     /**
@@ -68,7 +89,18 @@ class siswaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $sis = siswa::find($id);
+
+        $sis->nis = $request->nis;
+        $sis->nama = $request->nama;
+        $sis->tempat_lahir = $request->tempat;
+        $sis->tanggal_lahir = $request->tgl;
+        $sis->jenis_kelamin = $request->jk;
+        $sis->kelas_id = $request->kelas;
+
+        $sis->save();
+
+        return redirect('/siswa');
     }
 
     /**
@@ -79,6 +111,8 @@ class siswaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $sis  = siswa::find($id);
+        $sis->delete();
+        return redirect('/siswa'); 
     }
 }

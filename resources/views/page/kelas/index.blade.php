@@ -34,7 +34,7 @@
             <table class="table table-striped">
                 <thead>
                     <tr>
-                    <th scope="col">#</th>
+                    <th scope="col">NO</th>
                     <th scope="col">Kode Kelas</th>
                     <th scope="col">Kelas</th>
                     <th scope="col">Action</th>
