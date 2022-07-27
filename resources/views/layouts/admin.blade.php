@@ -235,7 +235,7 @@
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-edit"></i>
               <p>
-                Forms
+                Table Siswa
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
@@ -245,7 +245,7 @@
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-table"></i>
               <p>
-                Tables
+                Tables 
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
